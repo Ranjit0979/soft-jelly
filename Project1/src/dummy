@@ -1,0 +1,15 @@
+create table dept
+(
+deptId int primary key,
+deptName varchar(20)
+);
+
+create table emp
+(
+empId int primary key auto_increment,
+name varchar(20),
+password varchar(10),
+leaves varchar(3) DEFAULT "no",
+department int,
+foreign key(department) references dept(deptId) on delete set Null on update cascade
+);
